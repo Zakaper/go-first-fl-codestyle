@@ -52,7 +52,7 @@ func special(charName, charClass string) string {
 }
 
 // здесь обратите внимание на имена параметров
-func startTraining(charName,charClass string) string {
+func startTraining(charName, charClass string) string {
 	if charClass == "warrior" {
 		fmt.Printf("%s, ты %s - отличный боец ближнего боя.\n", charName, charClass)
 	}
@@ -75,14 +75,14 @@ func startTraining(charName,charClass string) string {
 	for cmd != "skip" {
 		fmt.Print("Введи команду: ")
 		fmt.Scanf("%s\n", &cmd)
- 
+
 		switch {
-		case  cmd == "attack":
-			fmt.Pritnln(attack(charName, charClass))
+		case cmd == "attack":
+			fmt.Println(attack(charName, charClass))
 		case cmd == "defence":
-			fmt.Pritnln(defence(charName, charClass))
+			fmt.Println(defence(charName, charClass))
 		case cmd == "special":
-			fmt.Println(special(charName,charClass))
+			fmt.Println(special(charName, charClass))
 		default:
 			fmt.Println("неизвестная команда")
 		}
@@ -93,18 +93,18 @@ func startTraining(charName,charClass string) string {
 // обратите внимание на имя функции и имена переменных
 func choiseCharClass() string {
 	var approveChoice string
-	var charClass
+	var charClass string
 
 	for approveChoice != "y" {
 		fmt.Print("Введи название персонажа, за которого хочешь играть: Воитель — warrior, Маг — mage, Лекарь — healer: ")
 		fmt.Scanf("%s\n", &charClass)
 		if charClass == "warrior" {
 			fmt.Println("Воитель — дерзкий воин ближнего боя. Сильный, выносливый и отважный.")
-		} 
+		}
 		if charClass == "mage" {
 			fmt.Println("Маг — находчивый воин дальнего боя. Обладает высоким интеллектом.")
-		} 
-		 if charClass == "healer" {
+		}
+		if charClass == "healer" {
 			fmt.Println("Лекарь — могущественный заклинатель. Черпает силы из природы, веры и духов.")
 		}
 		fmt.Print("Нажми (Y), чтобы подтвердить выбор, или любую другую кнопку, чтобы выбрать другого персонажа: ")
@@ -127,7 +127,7 @@ func main() {
 	fmt.Println("Ты можешь выбрать один из трёх путей силы:")
 	fmt.Println("Воитель, Маг, Лекарь")
 
-	charClass := choiseCharClass("Воин", " ")
+	charClass := choiseCharClass()
 
 	fmt.Println(startTraining(charName, charClass))
 }
